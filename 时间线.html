@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时间线demo</title>
+    <style>
+    .content{
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .titile{
+        text-align: center;
+    }
+    .line{
+        margin-top: 20px;
+    }
+    .line .timeline:not(:last-child)::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        border: 2px solid #eee;
+        z-index: -1;
+        margin-left: -1px;
+    }
+    .timeline{
+        position: relative;
+        text-align: center;
+        padding: 0 0 90px;
+        
+    }
+    .timeline .start{
+        margin: 0;
+        display: inline-block;
+        padding: 50px;
+        background-color: #8bc34a;
+        border: 3px solid #eee; 
+        border-radius: 50%;
+    }
+    .timeline:last-child{
+        padding: 0;
+    }
+    .timeline>img{
+        max-width: 140px;
+        border: 3px solid #eee;
+        border-radius: 50%;
+    }
+    .timeline .description{
+        position: absolute;
+        top: 0%;
+        text-align: right;
+    }
+    .timeline:nth-child(odd) .description{
+        right: 50%;
+        margin-right: 90px;
+    }
+    .timeline:nth-child(even) .description{
+        left: 50%;
+        margin-left: 90px;
+        text-align: left;
+    } 
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="titile">
+            <h1>About</h1>
+            <div>Lorem ipsum dolor sit</div>    
+        </div>
+
+        <ul class="line">
+            <li class="timeline">
+                <img src="./src/img/1.jpg" alt="">
+                <div class="description">
+                    <p>2017年11月30日20:30:36</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in ab rerum. Quaerat reprehenderit aut repellendus tempora enim, officia ut ab dolorem quibusdam molestiae hic molestias modi recusandae in error.</p>
+                </div>
+            </li>
+            <li class="timeline">
+                <img src="./src/img/2.jpg" alt="">
+                <div class="description">
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in ab rerum. Quaerat reprehenderit aut repellendus tempora enim, officia ut ab dolorem quibusdam molestiae hic molestias modi recusandae in error.</p>
+                </div>
+            </li>
+            <li class="timeline">
+                <img src="./src/img/3.jpg" alt="">
+                <div class="description">
+                    <p>2017年11月30日20:30:36</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in ab rerum. Quaerat reprehenderit aut repellendus tempora enim, officia ut ab dolorem quibusdam molestiae hic molestias modi recusandae in error.</p>
+                </div>
+            </li>
+            <li class="timeline">
+                <img src="./src/img/4.jpg" alt="">
+                <div class="description">
+                    <p>2017年11月30日20:30:36</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi in ab rerum. Quaerat reprehenderit aut repellendus tempora enim, officia ut ab dolorem quibusdam molestiae hic molestias modi recusandae in error.</p>
+                </div>
+            </li>
+            <li class="timeline">
+                <p class="start">Start</p>
+                <div class="description">
+                    <p>2017年11月30日20:30:36</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

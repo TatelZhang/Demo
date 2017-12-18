@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes roll {
+            0% {
+                transform: perspective(800px) rotateX(10deg) translateY(-500px);
+            }
+            20% {
+                transform: perspective(800px) rotateX(10deg)
+            }
+            40% {
+                transform: perspective(800px) rotateY(10deg) translateY(-150px)
+            }
+            60% {
+                transform: perspective(800px) rotateY(30deg)
+            }
+            80% {
+                transform: perspective(800px) rotateX(40deg) rotateY(50deg) rotateZ(10deg) translateY(-80px)
+            }
+            100% {
+                transform:perspective(800px) rotateY(30deg);
+            }
+        }
+        .container{
+            position: relative;
+        }
+        .wraper {
+            cursor: pointer;
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: 200px;
+             
+            /* perspective: 800px; */
+            transform: perspective(800px) rotateY(30deg) rotateX(-20deg);
+            transform-style: preserve-3d;
+            /* animation: roll 5s; */
+        }
+        .wraper>div{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            perspective: 800px;
+            text-align: center;
+            font-size: 80px;
+            line-height: 200px;
+            /* backface-visibility: hidden; */
+        }
+        .front{
+            background-color: #00bcd499;
+            /* transform: perspective(800px); */
+            transform: translateZ(100px)
+        }
+        .top {
+            background-color: #3d27b061;
+            transform: rotateX(90deg) translateZ(100px); 
+        }
+        .right{
+            background-color: blueviolet;
+            transform: rotateY(90deg) translateZ(100px)
+        }
+        .bottom {
+            background-color: aquamarine;
+            transform: rotateX(-90deg) translateZ(100px)
+        }
+        .left {
+            background-color: #ff98009c;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .back{
+            background-color: firebrick;
+            transform: rotateX(180deg) translateZ(100px)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wraper">
+            <div class="front">前</div>
+            <div class="back">后</div>
+            <div class="left">左</div>
+            <div class="right">右</div>
+            <div class="top">上</div>
+            <div class="bottom">下</div>
+        </div>
+    </div>
+</body>
+<script>
+    function $(tag) {
+        return document.querySelector(tag);
+    }
+    (function(){
+        let a =document.querySelector('.wraper')
+        let b = document.getElementsByClassName('.wraper')[0]
+    })()
+    $('.wraper').addEventListener('click',(e)=>{
+        // console.log(e);
+        // $('.wraper').
+        let x = Math.random() * 360
+        let y = Math.random() * 360
+        let z = Math.random() * 360
+        $('.wraper').style.transform = `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+        $('.wraper').style.transition = `all ease 1s`
+        // console.log($('.wraper').style)
+    })
+</script>
+</html>
